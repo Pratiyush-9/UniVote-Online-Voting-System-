@@ -1,68 +1,66 @@
-Voting Application
+# Voting Application
 
 This is a backend application for a voting system where users can vote for candidates. It provides functionalities for user authentication, candidate management, and voting.
-Features
 
-    User sign up and login with Aadhar Card Number and password
-    User can view the list of candidates
-    User can vote for a candidate (only once)
-    Admin can manage candidates (add, update, delete)
-    Admin cannot vote
+## Features
 
-Technologies Used
+- User sign up and login with Aadhar Card Number and password
+- User can view the list of candidates
+- User can vote for a candidate (only once)
+- Admin can manage candidates (add, update, delete)
+- Admin cannot vote
 
-    Node.js
-    Express.js
-    MongoDB
-    JSON Web Tokens (JWT) for authentication
+## Technologies Used
 
-Installation
+- Node.js
+- Express.js
+- MongoDB
+- JSON Web Tokens (JWT) for authentication
 
-Clone the repository:
+## Installation
 
-git clone https://github.com/Pratiyush-9/UniVote-Online-Voting-System-.git
+1. Clone the repository:
 
-API Endpoints
-Authentication
-Sign Up
+   ```bash
+   git clone https://github.com/Prince-1501/voting_app.git
 
-    POST /signup: Sign up a user
 
-Login
+# API Endpoints
 
-    POST /login: Login a user
+## Authentication
 
-Candidates
-Get Candidates
+### Sign Up
+- `POST /signup`: Sign up a user
 
-    GET /candidates: Get the list of candidates
+### Login
+- `POST /login`: Login a user
 
-Add Candidate
+## Candidates
 
-    POST /candidates: Add a new candidate (Admin only)
+### Get Candidates
+- `GET /candidates`: Get the list of candidates
 
-Update Candidate
+### Add Candidate
+- `POST /candidates`: Add a new candidate (Admin only)
 
-    PUT /candidates/:id: Update a candidate by ID (Admin only)
+### Update Candidate
+- `PUT /candidates/:id`: Update a candidate by ID (Admin only)
 
-Delete Candidate
+### Delete Candidate
+- `DELETE /candidates/:id`: Delete a candidate by ID (Admin only)
 
-    DELETE /candidates/:id: Delete a candidate by ID (Admin only)
+## Voting
 
-Voting
-Get Vote Count
+### Get Vote Count
+- `GET /candidates/vote/count`: Get the count of votes for each candidate
 
-    GET /candidates/vote/count: Get the count of votes for each candidate
+### Vote for Candidate
+- `POST /candidates/vote/:id`: Vote for a candidate (User only)
 
-Vote for Candidate
+## User Profile
 
-    POST /candidates/vote/:id: Vote for a candidate (User only)
+### Get Profile
+- `GET /users/profile`: Get user profile information
 
-User Profile
-Get Profile
-
-    GET /users/profile: Get user profile information
-
-Change Password
-
-    PUT /users/profile/password: Change user password
+### Change Password
+- `PUT /users/profile/password`: Change user password

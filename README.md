@@ -1,94 +1,68 @@
-==============================
-UniVote - Voting Application
-==============================
+Voting Application
 
-Description:
--------------
-UniVote is a backend application for a university voting system where users can vote for candidates. 
-It provides functionalities for user authentication, candidate management, and secure voting.
+This is a backend application for a voting system where users can vote for candidates. It provides functionalities for user authentication, candidate management, and voting.
+Features
 
-⚠️ Note: Backend Only. Use Postman or any API testing tool to interact with endpoints.
+    User sign up and login with Aadhar Card Number and password
+    User can view the list of candidates
+    User can vote for a candidate (only once)
+    Admin can manage candidates (add, update, delete)
+    Admin cannot vote
 
-Author:
---------
-Pratiyush Kumar
-GitHub: https://github.com/Pratiyush-9
+Technologies Used
 
-Features:
-----------
-- User sign up and login with Aadhar Card Number and password
-- View the list of candidates
-- Vote for a candidate (only once)
-- Admin can manage candidates (add, update, delete)
-- Admin cannot vote
+    Node.js
+    Express.js
+    MongoDB
+    JSON Web Tokens (JWT) for authentication
 
-Technologies Used:
-------------------
-- Node.js
-- Express.js
-- MongoDB
-- JSON Web Tokens (JWT) for authentication
+Installation
 
-Installation:
--------------
-1. Clone the repository:
-   git clone https://github.com/Pratiyush-9/UniVote-Online-Voting-System-.git
+Clone the repository:
 
-2. Navigate to the project folder:
-   cd UniVote-Online-Voting-System-
+git clone https://github.com/Pratiyush-9/UniVote-Online-Voting-System-.git
 
-3. Install dependencies:
-   npm install
+API Endpoints
+Authentication
+Sign Up
 
-4. Start the development server:
-   npm run dev
+    POST /signup: Sign up a user
 
-- The backend server will run on: http://localhost:8000
-- Use Postman or any API testing tool to interact with the endpoints.
+Login
 
-API Endpoints:
---------------
+    POST /login: Login a user
 
-Authentication:
----------------
-- Sign Up: 
-  POST /signup – Register a new user
+Candidates
+Get Candidates
 
-- Login: 
-  POST /login – Login a user
+    GET /candidates: Get the list of candidates
 
-Candidates:
------------
-- Get Candidates: 
-  GET /candidates – Retrieve the list of candidates
+Add Candidate
 
-- Add Candidate (Admin only): 
-  POST /candidates – Add a new candidate
+    POST /candidates: Add a new candidate (Admin only)
 
-- Update Candidate (Admin only): 
-  PUT /candidates/:id – Update candidate by ID
+Update Candidate
 
-- Delete Candidate (Admin only): 
-  DELETE /candidates/:id – Delete candidate by ID
+    PUT /candidates/:id: Update a candidate by ID (Admin only)
 
-Voting:
--------
-- Get Vote Count: 
-  GET /candidates/vote/count – Get vote counts for all candidates
+Delete Candidate
 
-- Vote for Candidate (User only): 
-  POST /candidates/vote/:id – Cast vote for a candidate
+    DELETE /candidates/:id: Delete a candidate by ID (Admin only)
 
-User Profile:
--------------
-- Get Profile: 
-  GET /users/profile – Get user profile information
+Voting
+Get Vote Count
 
-- Change Password: 
-  PUT /users/profile/password – Change user password
+    GET /candidates/vote/count: Get the count of votes for each candidate
 
-Notes:
-------
-- Make sure MongoDB is running locally or provide a connection URI in a `.env` file.
-- Admin users cannot vote.
-- Each user can vote only once.
+Vote for Candidate
+
+    POST /candidates/vote/:id: Vote for a candidate (User only)
+
+User Profile
+Get Profile
+
+    GET /users/profile: Get user profile information
+
+Change Password
+
+    PUT /users/profile/password: Change user password
